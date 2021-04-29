@@ -1,3 +1,3 @@
 # demo-tekton
 
-This is the demo of Tekton operator.
+This is the demo of Tekton operator for cdCon.
