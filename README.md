@@ -1,4 +1,4 @@
-# Demo of Tekton Operator for cdCon 2021
+# Demo of Tekton Operator for cdCon 2021 Test
 
 ## Prerequisites:
 
@@ -82,3 +82,28 @@ export WEBHOOK_URL=https://smee.io/pUUFF1sfFnIXhvX
 smee -u $WEBHOOK_URL --target http://localhost/ci/
 ```
 
+Create a new PR for this repository.
+
+Check locally with the command:
+```
+kubectl get taskruns | grep github-run-
+```
+to see the created TaskRun.
+
+## Upgrade from v0.21 to v0.22
+
+Directly install the operator v0.22
+```aidl
+kubectl apply -f https://storage.googleapis.com/tekton-releases/operator/previous/v0.22.0-3/release.yaml
+```
+
+Check the Tekton components:
+```aidl
+kubectl get TektonPipeline,TektonTrigger,TektonDashboard
+```
+
+Check the dashboard at http://localhost/dashboard.
+
+Dashboard @v0.15.0, Trigger @v0.12.1 and Pipeline @v0.22.0.
+
+Open another new PR or update the existing PR for the repository to verify the upgraded tekton works.
